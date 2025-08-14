@@ -141,7 +141,8 @@ Authentication and policy enforcement were successfully tested, including verifi
 1.  **Access Vault UI via Okta Auth Method:**
     * The test user `****@mell**.com`, a member of the `lab User` Okta group, was used to log in to the Vault UI.
     * On the Vault sign-in page, the "Okta" method was selected.
-<img width="349" height="452" alt="Screenshot 2025-07-12 160852" src="https://github.com/user-attachments/assets/097a1cc5-5d74-45dd-bdc6-1c96c3bc0dde" />
+<img width="349" height="452" alt="Screenshot 2025-07-12 160852" src="https://github.com/user-attachments/assets/67c2e82e-bb9b-41b4-99c3-12ec2f27e96e" />
+
 
     * The user logged in successfully with their Okta credentials.
 <img width="1074" height="523" alt="image" src="https://github.com/user-attachments/assets/0a360d39-03f0-4741-861d-65e3d7933a3d" />
@@ -196,4 +197,4 @@ With Okta authentication successfully integrated with HashiCorp Vault using the 
 * **Secrets Engine Configuration:** Configure specific secret engines in Vault (e.g., AWS, Azure, GCP, Kubernetes, database secrets engines) to manage credentials for various platforms.
 * **Vault Agent:** Deploy Vault Agents for applications to securely retrieve secrets without direct application interaction with Vault.
 * **Broader Policy Model:** Map multiple Okta groups to tiered Vault policies (read-only, writer, admin).
----
+--- 
