@@ -6,7 +6,7 @@
 
 This lab demonstrates the implementation of **federated access (Single Sign-On - SSO)** from **Okta** to the **AWS Management Console** using **AWS IAM Identity Center** (formerly AWS Single Sign-On). The primary objective is to enable Okta-managed users to securely sign in to AWS accounts and assume specific AWS IAM roles, centralizing identity management and enhancing security posture.
 
-By establishing this federation, we achieve:
+By establishing this federation, I achieve:
 
 - **Centralized Authentication:** Users authenticate once with their Okta credentials (leveraging Okta's MFA and policies) to access AWS.
     
@@ -65,7 +65,7 @@ Implementing Okta federation with AWS involved navigating the evolving AWS SSO l
 
 ## III. Prerequisites
 
-Before proceeding, ensure you have the following in place:
+Before proceeding, ensure the following in place:
 
 - **AWS Account:** An active AWS account with root user or IAM administrator access.
     
@@ -82,7 +82,7 @@ This section details the step-by-step process for setting up SAML federation and
 
 ### A. Phase 1: Get Okta SAML Metadata (In Okta Admin Console)
 
-1. **Log in to your Okta Admin Console.**
+1. **Log in to Okta Admin Console.**
     
 2. **Add the AWS IAM Identity Center Application:**
     
@@ -103,7 +103,7 @@ This section details the step-by-step process for setting up SAML federation and
         
     - Under **"SAML Signing Certificates"**, select **"View IdP Metadata"** from the **Actions** drop-down menu.
         
-    - **Save the contents of the XML page as `metadata.xml`** to your local system. This file contains Okta's SAML metadata.
+    - **Save the contents of the XML page as `metadata.xml`** to the local system. This file contains Okta's SAML metadata.
         
 
 ### B. Phase 2: Configure AWS IAM Identity Center (In AWS Management Console)
@@ -132,7 +132,7 @@ This step establishes trust in AWS and obtains necessary URLs for Okta.
 
 5. **Configure External Identity Provider (Upload Okta's Metadata):**
     
-    - **IdP SAML metadata:** Click **"Choose file"** and **upload the `metadata.xml` file** you saved from Okta in Phase 1.
+    - **IdP SAML metadata:** Click **"Choose file"** and **upload the `metadata.xml` file** saved from Okta in Phase 1.
         
     - **Copy the following URLs** displayed on this page and **save them securely**:
         
@@ -158,13 +158,13 @@ This step establishes trust in AWS and obtains necessary URLs for Okta.
 
 This step completes the SAML configuration in Okta using URLs from AWS.
 
-1. **Go back to your Okta Admin Console** (your AWS IAM Identity Center application page).
+1. **Go back to  Okta Admin Console** (The AWS IAM Identity Center application page).
     
 2. Click on the **"Sign On"** tab.
     
 3. Click **"Edit"**.
     
-4. Enter your **AWS IAM Identity Center SSO ACS URL** and **AWS IAM Identity Center SSO issuer URL** (the values you copied from AWS in Phase 2) into the corresponding fields.
+4. Enter the **AWS IAM Identity Center SSO ACS URL** and **AWS IAM Identity Center SSO issuer URL** (the values copied from AWS in Phase 2) into the corresponding fields.
     <img width="581" height="454" alt="Screenshot 2025-07-29 195625" src="https://github.com/user-attachments/assets/fa4605cd-c672-43fe-9eaa-a98f3d766859" />
 
 5. **Application username format:** Select an appropriate option (e.g., "Okta username" or "Email"). This value must be unique for users in AWS IAM Identity Center.
@@ -174,9 +174,9 @@ This step completes the SAML configuration in Okta using URLs from AWS.
 
 ### D. Phase 4: Define Permission Sets in AWS IAM Identity Center (In AWS Management Console)
 
-Permission sets define the access users will have in your AWS accounts.
+Permission sets define the access users will have in the AWS accounts.
 
-1. **Log in to your AWS Management Console.**
+1. **Log in to the AWS Management Console.**
     
 2. **Navigate to IAM Identity Center.**
     
@@ -222,7 +222,7 @@ This crucial step synchronizes users and groups from Okta to AWS IAM Identity Ce
 
 1. **Get SCIM Endpoint and Token from AWS:**
     
-    - **Log in to your AWS Management Console.**
+    - **Log in to the AWS Management Console.**
         
     - Navigate to **IAM Identity Center**.
         
@@ -235,9 +235,9 @@ This crucial step synchronizes users and groups from Okta to AWS IAM Identity Ce
 
 2. **Configure Provisioning in Okta:**
     
-    - **Log in to your Okta Admin Console.**
+    - **Log in to the Okta Admin Console.**
         
-    - Go to your **"AWS IAM Identity Center"** application.
+    - Go to the **"AWS IAM Identity Center"** application.
         
     - Click on the **"Provisioning"** tab.
         
@@ -273,7 +273,7 @@ This crucial step synchronizes users and groups from Okta to AWS IAM Identity Ce
         
     - Click **"+ Push Groups"** > **"Find groups by name"**.
         
-    - Search for and select your **`Lab users`** group.
+    - Search for and select **`Lab users`** group.
         
     - Under "Match result & push action", select **"Create Group"**.
         
@@ -287,15 +287,15 @@ This crucial step synchronizes users and groups from Okta to AWS IAM Identity Ce
 
 ### F. Phase 6: Assign Users/Groups to AWS Accounts (in IAM Identity Center)
 
-This step links the synchronized Okta group to your AWS account and the permission set.
+This step links the synchronized Okta group to AWS account and the permission set.
 
-1. **Log in to your AWS Management Console.**
+1. **Log in to AWS Management Console.**
     
 2. **Navigate to IAM Identity Center.**
     
 3. In the left-hand navigation, click **"AWS accounts"**.
     
-4. Select the **checkbox** next to your **AWS account**.
+4. Select the **checkbox** next to the **AWS account**.
     
 5. Click **"Assign users or groups"**.
     <img width="964" height="848" alt="Screenshot 2025-07-29 204000" src="https://github.com/user-attachments/assets/42345d8a-00bf-4915-b3d8-d8db552b02e9" />
@@ -306,7 +306,7 @@ This step links the synchronized Okta group to your AWS account and the permissi
         
     - **Users or groups:** Click the **"Groups"** tab.
         
-    - Select the **checkbox** next to your **`Lab users`** group (it should now be visible).
+    - Select the **checkbox** next to **`Lab users`** group (it should now be visible).
         <img width="669" height="589" alt="Screenshot 2025-07-29 204952" src="https://github.com/user-attachments/assets/4394f2dd-31a8-480b-b355-399d033e7d42" />
 
     - Click **"Next"**.
@@ -332,29 +332,29 @@ This is the final verification.
 
 1. **Open a new incognito/private browser window.**
     
-2. Go to your **Okta End-User Dashboard** (e.g., `https://trial-5828141.okta.com/`).
+2. Go to the **Okta End-User Dashboard** (e.g., `https://trial-5828141.okta.com/`).
     
-3. Log in with an **Okta test user** who is a member of your `Lab users` group.
+3. Log in with an **Okta test user** who is a member of `Lab users` group.
     
-4. You should see the **"AWS IAM Identity Center"** application icon. Click it.
+4. Click the  **"AWS IAM Identity Center"** application icon.
     <img width="909" height="777" alt="Screenshot 2025-07-29 205631" src="https://github.com/user-attachments/assets/aacc6c0b-3639-4a91-8e54-b52951a5742e" />
 
-5. You should be redirected to the **AWS Access Portal**.
+5. It redirected to the **AWS Access Portal**.
     
-6. Click on the **"AWS Account"** you were assigned to.
+6. Click on the **"AWS Account"** assigned.
     
 7. Click on the **"Management console"** link next to the `OktaReadOnlyAccess` permission set.
     
-8. You should be redirected to the **AWS Management Console**, logged in as the federated user, with the `OktaReadOnlyAccess` role assumed.
+8. It will redirected to the **AWS Management Console**, logged in as the federated user, with the `OktaReadOnlyAccess` role assumed.
     <img width="912" height="522" alt="Screenshot 2025-07-29 205806" src="https://github.com/user-attachments/assets/65321457-58ee-4de5-bf05-1edafb7d2e7d" />
 
 9. **Verify Permissions:** Navigate to **S3** and **EC2** (Instances).
     
-    - You should be able to **see** your `mellonryon-fed-access-test-bucket-boluw-29jul-v2` S3 bucket.
+    - It should be able to **see** the S3 bucket.
         
-    - You should be able to **see** your `MellonryonServer` EC2 instance.
+    - It should be able to **see** the EC2 instance.
         
-    - Try to upload a file to S3, delete the bucket, or stop/terminate the EC2 instance. You should receive an **"Access Denied"** error, confirming that the `ReadOnlyAccess` policy is correctly enforced.
+    - Try to upload a file to S3, delete the bucket, or stop/terminate the EC2 instance. It should receive an **"Access Denied"** error, confirming that the `ReadOnlyAccess` policy is correctly enforced.
        
 ## V. Troubleshooting & Lessons Learned
 
