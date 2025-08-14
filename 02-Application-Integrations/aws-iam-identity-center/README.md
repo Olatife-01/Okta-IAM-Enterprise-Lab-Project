@@ -1,1 +1,0 @@
-aws-iam-identity-center
