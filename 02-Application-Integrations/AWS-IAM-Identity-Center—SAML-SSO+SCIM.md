@@ -1,6 +1,6 @@
 # AWS IAM Identity Center — SAML SSO + SCIM (Okta → AWS)
 
-> **Scope (Lab, not production):** I federated Okta to **AWS IAM Identity Center** (formerly AWS SSO) for **SAML SSO** and enabled **SCIM** so users/groups and assignments can be managed centrally in Okta. Access in AWS is enforced via **Permission Sets** mapped to **Okta Push Groups**. Terraform-based role/account provisioning is documented separately.
+> **Scope:** I federated Okta to **AWS IAM Identity Center** (formerly AWS SSO) for **SAML SSO** and enabled **SCIM** so users/groups and assignments can be managed centrally in Okta. Access in AWS is enforced via **Permission Sets** mapped to **Okta Push Groups**. Terraform-based role/account provisioning is documented separately.
 
 ## I. Objective & Purpose
 
