@@ -20,6 +20,7 @@ I designed, built, and documented a robust enterprise IAM lab using **Okta** as 
 * Infrastructure/identity changes are automated or reproducible (**Workflows**, **Terraform**).
 * **Okta System Logs** are designed to flow to **Splunk Cloud** for dashboards/alerts.
 * Evidence (reports/logs/Terraform history) can be bundled for audit.
+<img width="734" height="1381" alt="image" src="https://github.com/user-attachments/assets/dc318921-db87-49b3-903c-82f0ccbf560e" />
 
 ## Components
 
@@ -34,6 +35,7 @@ I designed, built, and documented a robust enterprise IAM lab using **Okta** as 
 * \**Okta Identity Governance / Okta Privileged Access*
 
 <img width="822" height="587" alt="image" src="https://github.com/user-attachments/assets/a595ab51-ee94-417a-bf61-465180fe20e1" />
+<img width="672" height="648" alt="image" src="https://github.com/user-attachments/assets/ac54f3d7-ce64-47e3-a832-546333c0c314" />
 
 ### Downstream Applications
 
@@ -41,6 +43,7 @@ I designed, built, and documented a robust enterprise IAM lab using **Okta** as 
 * **Google Workspace** — SSO only; provisioning blocked by org policy
 * **Zendesk** — SAML SSO *(implemented)*
 * **Slack** — SSO (SCIM optional; not enabled in this lab)
+<img width="648" height="708" alt="image" src="https://github.com/user-attachments/assets/e1c826b1-925c-4633-ba20-4a49d242b699" />
 
 ### Cloud Access
 
@@ -50,20 +53,25 @@ I designed, built, and documented a robust enterprise IAM lab using **Okta** as 
 
 * **Okta Workflows** — JML patterns; Lambda-triggered S3 folder creation; daily de-provision audit email
 * **Terraform (IaC)** — Okta & AWS resources; **S3 + DynamoDB** backend; Git CI/CD
+<img width="840" height="663" alt="image" src="https://github.com/user-attachments/assets/c6a80a30-572a-40a2-9dbf-cacc32156269" />
 
 ### Observability / SIEM
 
 * **Splunk Cloud** — Ingestion of Okta System Logs, dashboards, and email alerts 
+<img width="876" height="550" alt="image" src="https://github.com/user-attachments/assets/6f75821c-968d-4395-8ea8-d42879eb99c5" />
 
 ### Security Tooling
 
 * **Okta Verify** — MFA factor
 * **EDR/MDM** — not integrated; posture expressed via **Okta Device Assurance**
 * **Password Manager**
+<img width="741" height="468" alt="image" src="https://github.com/user-attachments/assets/14f6f227-35ae-45cc-9076-6ddda291df97" />
 
 ## Why I built it this way (Zero-Trust alignment)
 
 * **Least privilege:** group-based assignments, permission sets, and (optional) JIT patterns.
+<img width="733" height="649" alt="image" src="https://github.com/user-attachments/assets/b304391a-0f9d-46c7-a320-890b2a2d11bb" />
+
 * **Contextual access:** Adaptive MFA, Network Zones, and Device Assurance for high-tier apps.
 * **Auditability:** Okta logs + Splunk dashboards/alerts + Terraform state/commit history.
 
