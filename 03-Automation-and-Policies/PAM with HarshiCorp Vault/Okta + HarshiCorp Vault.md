@@ -61,9 +61,9 @@ I configured Vault to use the Okta Auth Method, linking it to my Okta organizati
 The Okta authentication method was enabled and configured directly through the Vault UI.
 
 1.  **Access your Vault Instance (UI):**
-    * Log in to your Vault UI (e.g., `https://*******.*****.z1.hashicorp.cloud:***`).
+    * Log in to your Vault UI (e.g., `https://.z1.hashicorp.cloud:*`).
     * Log in with a root token or an administrator token.
-
+<img width="811" height="896" alt="Screenshot 2025-07-12 120625" src="https://github.com/user-attachments/assets/cd2b20dd-dde2-40e3-91b7-d42c43c88ecb" />
 
 2.  **Navigate to Authentication Methods:**
     * In the left-hand navigation, click on **"Access"**.
@@ -73,11 +73,15 @@ The Okta authentication method was enabled and configured directly through the V
     * Click on **"Enable new method"**.
     * From the list, select the **"Okta"** method under "Infra".
     * Click **"Next"**.
+<img width="1010" height="691" alt="Screenshot 2025-07-12 122502" src="https://github.com/user-attachments/assets/58141de8-b2ca-43a3-b8fb-9392a6d2b098" />
 
 4.  **Configure the Okta Auth Method Details:**
-    * Fill in the fields as shown in your screenshots.
-    * **Organization Name:** Set to your Okta domain, specifically `trial-5828141`.
+    * **Organization Name:** Set to your Okta domain.
+<img width="812" height="152" alt="image" src="https://github.com/user-attachments/assets/d740b95d-f437-4078-bb60-7501bd612f9b" />
+
     * **API Token:** Paste the **Okta API Token Value** you generated and securely saved in Section III.
+      <img width="782" height="161" alt="Screenshot 2025-07-12 160754" src="https://github.com/user-attachments/assets/94f977ad-58c3-405b-84a7-e1cf003742d5" />
+
     * **Base URL (Optional):** This can usually be left as the default (`okta.com`) as it was not specified to be changed.
     * *Note:* The `Bypass Okta MFA` option was not explicitly mentioned as configured, implying Okta's native MFA flow would be used.
 
@@ -91,19 +95,20 @@ A Key-Value (KV) secrets engine was enabled and a secret was created.
 
 1.  **Enable New Secret Engine:**
     * A new secret engine was enabled with the path `KV`. This is typically done through the Vault UI or CLI.
-    * *Visual Reference:* See `Pasted image 20250712121734.png` in `PAM with HashiCorp Vault.md`.
+   <img width="809" height="622" alt="Screenshot 2025-07-12 121615" src="https://github.com/user-attachments/assets/9a989223-d204-4252-9ec7-98f4878a9334" />
 
 2.  **Create Secret:**
     * A new secret was created with the path `secret/app/db-credentials`.
-    * *Visual Reference:* See `Pasted image 20250712122039.png` in `PAM with HashiCorp Vault.md`.
+    <img width="797" height="436" alt="Screenshot 2025-07-12 122035" src="https://github.com/user-attachments/assets/d2aad8aa-37ba-4cfe-806b-29c5a5685fe0" />
 
 ### C. Vault Policy Creation
 
 A specific Vault policy was created to define access to secrets.
 
 1.  **Access your Vault Instance (CMD/PowerShell):**
-    * Open your Command Prompt or PowerShell.
-    * Ensure you are logged in to Vault with a token that has root or `sudo` capabilities.
+    * Open your Command Prompt or PowerShell or via UI.
+    * Ensure you are logged in to Vault with a token that has root  capabilities.
+<img width="1608" height="759" alt="image" src="https://github.com/user-attachments/assets/cabb4a91-152a-4dd7-a355-6554685c0e9d" />
 
 2.  **Create `kv-read-policy`:**
     * A policy named `kv-read-policy` was created. This policy grants read and list capabilities to secrets under the `secret/data/*` path.
@@ -114,7 +119,7 @@ A specific Vault policy was created to define access to secrets.
     }
     EOF
     ```
-    * *Visual Reference:* See `Pasted image 20250712162716.png` in `PAM with HashiCorp Vault.md`.
+    <img width="779" height="477" alt="Screenshot 2025-07-12 162714" src="https://github.com/user-attachments/assets/d81ed42e-9b63-48ae-bf67-961e6f745b15" />
 
 ### D. HashiCorp Vault: Map Okta Groups to Vault Policies
 
@@ -127,36 +132,43 @@ An Okta group was created and mapped to the Vault policy.
     ```cmd
     vault write auth/okta/groups/lab User policies="kv-read-policy"
     ```
-    * *Note:* The screenshot implies only `kv-read-policy` for the mapping. In a full enterprise setup, the "default" policy is often also assigned for basic UI interaction.
+    <img width="806" height="450" alt="Screenshot 2025-07-12 163259" src="https://github.com/user-attachments/assets/28c48bc0-cf45-4119-bcf1-08e87a14a90a" />
 
 ## V. Testing and Validation
 
 Authentication and policy enforcement were successfully tested, including verification via Postman.
 
 1.  **Access Vault UI via Okta Auth Method:**
-    * The test user `joshua.dominguez126@mellonryon.com`, a member of the `lab User` Okta group, was used to log in to the Vault UI.
+    * The test user `****@mell**.com`, a member of the `lab User` Okta group, was used to log in to the Vault UI.
     * On the Vault sign-in page, the "Okta" method was selected.
+<img width="349" height="452" alt="Screenshot 2025-07-12 160852" src="https://github.com/user-attachments/assets/097a1cc5-5d74-45dd-bdc6-1c96c3bc0dde" />
+
     * The user logged in successfully with their Okta credentials.
-    * *Visual Reference:* See `Pasted image 20250712160906.png` and `Pasted image 20250712161006.png` in `PAM with HashiCorp Vault.md`.
+    <img width="1074" height="523" alt="image" src="https://github.com/user-attachments/assets/0a360d39-03f0-4741-861d-65e3d7933a3d" />
 
 2.  **Confirm User Permission with Postman:**
     * After logging in successfully, the user's token was obtained from their profile icon in the Vault UI.
+<img width="227" height="372" alt="image" src="https://github.com/user-attachments/assets/684bbb66-cd69-408f-8ecf-120073d02255" />
+
     * **Postman Configuration:**
         * A GET request was created in Postman.
+          <img width="914" height="496" alt="image" src="https://github.com/user-attachments/assets/b3936699-f011-4582-ae25-2f2995ee4a24" />
+
         * The request header `X-Vault-Token` was set, with the obtained user token as its value.
-        * The GET request was sent to the URL `https://my-okta-vault-lab-public-vault-51b9f454.ee46d4f2.z1.hashicorp.cloud:8200/v1/auth/okta/lookup`.
-    * **Result:** The GET request returned a `200 OK` status with a JSON body. The body explicitly showed that the token had the policies `kv-read-policy` and `default`, and indicated the username `joshua.dominguez126@mellonryon.com` and its mapping path `auth/okta/login/Joshua.dominguez126@mellonryon.com`. This confirmed the successful authentication and correct policy assignment.
-    * *Visual Reference:* See `Pasted image 20250712164114.png` and `Pasted image 20250712165649.png` in `PAM with HashiCorp Vault.md`, and the detailed `image_5b74e1.png`.
+        * The GET request was sent to the URL `https://***lookup`.
+    * **Result:** The GET request returned a `200 OK` status with a JSON body. The body explicitly showed that the token had the policies `kv-read-policy` and `default`, and indicated the username `jos*****.com` and its mapping path `auth/okta/login/****.com`. This confirmed the successful authentication and correct policy assignment.
+    <img width="912" height="876" alt="Screenshot 2025-07-12 165640copy" src="https://github.com/user-attachments/assets/8050740d-b8e0-4a34-bcda-d47103041285" />
+
 
 ## VI. Troubleshooting Common Issues
 
-This section reflects the types of issues one might encounter with this setup, including the specific OIDC problem you faced, and general troubleshooting for the successful Okta Auth Method.
+This section reflects the types of issues I encountered with this setup, including the specific OIDC problem faced, and general troubleshooting for the successful Okta Auth Method.
 
 * **Problem: "Okta-oidc" Auth Method Not Showing in Vault UI (Initial Attempt):**
-    * **Context:** This issue occurred during our initial OIDC setup attempt, despite `vault auth list` confirming its enablement via CLI.
+    * **Context:** This issue occurred during My initial OIDC setup attempt, despite `vault auth list` confirming its enablement via CLI.
     * **Impact:** Prevented UI-based login using the OIDC method.
     * **Troubleshooting & Workaround Applied:** We attempted hard refreshing the browser and clearing cache/cookies, but these did not resolve the UI display issue. As a workaround, we then opted to configure the direct "Okta" authentication method, which was visible and functional.
-    * **Suggested Remediation (if encountered generally for *any* UI element):** If a configured auth method doesn't appear in the UI, try a hard refresh (`Ctrl + F5`), clear browser cache/cookies, and ensure Vault service is running without errors.
+    * **Suggested Remediation:** If a configured auth method doesn't appear in the UI, try a hard refresh (`Ctrl + F5`), clear browser cache/cookies, and ensure Vault service is running without errors.
 
 * **"Permission denied" during login (UI or CLI) with Okta Auth Method:**
     * **Cause:** Incorrect Okta username or password, or an issue with the Okta API token used in Vault configuration.
