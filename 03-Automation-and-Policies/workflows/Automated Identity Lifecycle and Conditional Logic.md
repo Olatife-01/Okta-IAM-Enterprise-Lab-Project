@@ -1,6 +1,6 @@
 # Okta Workflows — Automated Identity Lifecycle & Conditional Logic
 
-> **Scope (Lab, not production):** I built no-code/low-code **Okta Workflows** to automate Joiner/Mover/Leaver patterns, enforce conditional group logic, and improve auditability through notifications. All screenshots should be embedded inline and any sensitive details (org URL, user emails, tokens) must be **redacted/blurred**.
+> **Scope:** I built no-code/low-code **Okta Workflows** to automate Joiner/Mover/Leaver patterns, enforce conditional group logic, and improve auditability through notifications.
 
 ---
 ## I. Objective & Purpose
