@@ -80,7 +80,7 @@ The Okta authentication method was enabled and configured directly through the V
 <img width="812" height="152" alt="image" src="https://github.com/user-attachments/assets/d740b95d-f437-4078-bb60-7501bd612f9b" />
 
     * **API Token:** Paste the **Okta API Token Value** you generated and securely saved in Section III.
-      <img width="782" height="161" alt="Screenshot 2025-07-12 160754" src="https://github.com/user-attachments/assets/94f977ad-58c3-405b-84a7-e1cf003742d5" />
+<img width="782" height="161" alt="Screenshot 2025-07-12 160754" src="https://github.com/user-attachments/assets/94f977ad-58c3-405b-84a7-e1cf003742d5" />
 
     * **Base URL (Optional):** This can usually be left as the default (`okta.com`) as it was not specified to be changed.
     * *Note:* The `Bypass Okta MFA` option was not explicitly mentioned as configured, implying Okta's native MFA flow would be used.
@@ -95,11 +95,11 @@ A Key-Value (KV) secrets engine was enabled and a secret was created.
 
 1.  **Enable New Secret Engine:**
     * A new secret engine was enabled with the path `KV`. This is typically done through the Vault UI or CLI.
-   <img width="809" height="622" alt="Screenshot 2025-07-12 121615" src="https://github.com/user-attachments/assets/9a989223-d204-4252-9ec7-98f4878a9334" />
+<img width="809" height="622" alt="Screenshot 2025-07-12 121615" src="https://github.com/user-attachments/assets/9a989223-d204-4252-9ec7-98f4878a9334" />
 
 2.  **Create Secret:**
     * A new secret was created with the path `secret/app/db-credentials`.
-    <img width="797" height="436" alt="Screenshot 2025-07-12 122035" src="https://github.com/user-attachments/assets/d2aad8aa-37ba-4cfe-806b-29c5a5685fe0" />
+<img width="797" height="436" alt="Screenshot 2025-07-12 122035" src="https://github.com/user-attachments/assets/d2aad8aa-37ba-4cfe-806b-29c5a5685fe0" />
 
 ### C. Vault Policy Creation
 
@@ -119,7 +119,7 @@ A specific Vault policy was created to define access to secrets.
     }
     EOF
     ```
-    <img width="779" height="477" alt="Screenshot 2025-07-12 162714" src="https://github.com/user-attachments/assets/d81ed42e-9b63-48ae-bf67-961e6f745b15" />
+   <img width="779" height="477" alt="Screenshot 2025-07-12 162714" src="https://github.com/user-attachments/assets/d81ed42e-9b63-48ae-bf67-961e6f745b15" />
 
 ### D. HashiCorp Vault: Map Okta Groups to Vault Policies
 
@@ -132,7 +132,7 @@ An Okta group was created and mapped to the Vault policy.
     ```cmd
     vault write auth/okta/groups/lab User policies="kv-read-policy"
     ```
-    <img width="806" height="450" alt="Screenshot 2025-07-12 163259" src="https://github.com/user-attachments/assets/28c48bc0-cf45-4119-bcf1-08e87a14a90a" />
+<img width="806" height="450" alt="Screenshot 2025-07-12 163259" src="https://github.com/user-attachments/assets/28c48bc0-cf45-4119-bcf1-08e87a14a90a" />
 
 ## V. Testing and Validation
 
@@ -144,7 +144,7 @@ Authentication and policy enforcement were successfully tested, including verifi
 <img width="349" height="452" alt="Screenshot 2025-07-12 160852" src="https://github.com/user-attachments/assets/097a1cc5-5d74-45dd-bdc6-1c96c3bc0dde" />
 
     * The user logged in successfully with their Okta credentials.
-    <img width="1074" height="523" alt="image" src="https://github.com/user-attachments/assets/0a360d39-03f0-4741-861d-65e3d7933a3d" />
+<img width="1074" height="523" alt="image" src="https://github.com/user-attachments/assets/0a360d39-03f0-4741-861d-65e3d7933a3d" />
 
 2.  **Confirm User Permission with Postman:**
     * After logging in successfully, the user's token was obtained from their profile icon in the Vault UI.
