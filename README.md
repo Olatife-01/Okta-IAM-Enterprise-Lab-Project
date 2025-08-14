@@ -3,7 +3,14 @@ Enterprise Identity and Access Management (IAM) Lab Projects
 Project Overview
 This repository serves as a portfolio of a hands-on lab project focused on designing, building, and documenting a modern, zero-trust-aligned Identity and Access Management (IAM) architecture. The project demonstrates practical experience with a variety of cloud and on-premises technologies, including Okta as the central identity provider, automation via Terraform and Okta Workflows, and observability with Splunk Cloud.
 
-The goal of this lab was to create a functional and secure identity platform that enforces strong authentication policies, automates user lifecycle management, and provides a clear audit trail for compliance.
+The goal of this lab was to demonstrate/create a functional and secure identity platform that enforces strong authentication policies, automates user lifecycle management, and provides a clear audit trail for compliance.
+
+## Repository structure
+- [01-Okta-Foundations](./01-Okta-Foundations) — UD, groups, policies, MFA, device assurance, self-service, branding
+- [02-Application-Integrations](./02-Application-Integrations) — Salesforce, Google Workspace (SSO), Zendesk, Slack, AWS IAM Identity Center
+- [03-Automation-and-Policies](./03-Automation-and-Policies) — Okta Workflows, Terraform (S3 + DynamoDB; Git CI/CD), security policies & app tiering
+- [04-Observability-and-Compliance](./04-Observability-and-Compliance) — Splunk Cloud (design + to-capture), evidence and reporting
+
 
 High-Level Architecture Diagram
 This diagram visualizes the final architecture of the lab environment, including all key integrations and data flows.
