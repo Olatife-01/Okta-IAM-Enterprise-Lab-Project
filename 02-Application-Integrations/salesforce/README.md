@@ -349,21 +349,19 @@ This demonstrates the full automated user lifecycle management.
 *Salesforce doesn't typically "delete" users immediately when deprovisioned via SCIM; instead, it marks them as inactive. This preserves historical data and audit trails.*
  <img width="691" height="460" alt="Screenshot 2025-07-19 180704" src="https://github.com/user-attachments/assets/0532f5b7-960d-43a6-8da6-c1a8466b9570" />
 
-##VI. Testing SSO
+## VI. Testing SSO
  - Login to assigned user dashboard
 <img width="955" height="681" alt="Screenshot 2025-07-19 130145" src="https://github.com/user-attachments/assets/c6f78be1-768e-47fd-9a93-57f1db0b3dca" />
         
-    - You need okta browser plugin to launch IDP initiated flow:
+- You need okta browser plugin to launch IDP initiated flow:
         <img width="736" height="333" alt="Screenshot 2025-07-19 120745" src="https://github.com/user-attachments/assets/7d8a58b6-9de7-46b1-b9c7-6d02b65d7de5" />
 
 <img width="932" height="897" alt="Screenshot 2025-07-19 120629" src="https://github.com/user-attachments/assets/1c3874d3-f128-4a18-b367-7dcff4b1f00d" />
-    - Sigin in to salesforce
+
+- Sigin in to salesforce
 <img width="958" height="862" alt="Screenshot 2025-07-19 121020" src="https://github.com/user-attachments/assets/963205c0-147b-4188-97e6-1f93dc38ef43" />
 
 <img width="923" height="574" alt="Screenshot 2025-07-19 130206" src="https://github.com/user-attachments/assets/4188c753-7463-41b6-95c4-2edbaeab7b91" />
-
-
-<img width="955" height="681" alt="Screenshot 2025-07-19 130145" src="https://github.com/user-attachments/assets/c6f78be1-768e-47fd-9a93-57f1db0b3dca" />
 
 
 ## VII. Troubleshooting & Lessons Learned
