@@ -208,7 +208,8 @@ This section details the successful implementation of three key workflow scenari
         <img width="1522" height="889" alt="image" src="https://github.com/user-attachments/assets/b7c0d16a-7d49-4ecc-ad46-a9d6b7157dfc" />
 
 4. **Verification:** Deactivated a test user in Okta and confirmed an email notification was sent with the correct details.
-    <img width="683" height="507" alt="image" src="https://github.com/user-attachments/assets/f17b2d1f-a2c8-4c79-9caf-24b2996c0be6" />
+   
+<img width="683" height="507" alt="image" src="https://github.com/user-attachments/assets/f17b2d1f-a2c8-4c79-9caf-24b2996c0be6" />
 
 <img width="554" height="223" alt="Screenshot 2025-08-01 190036" src="https://github.com/user-attachments/assets/3206d58f-ac62-4e78-b0db-3dfc651a4c1a" />
 
@@ -222,31 +223,32 @@ This section details the successful implementation of three key workflow scenari
     - **Flow Name:** `Dynamic User Provisioning`
         
     - **Event Card:** **"Flow Control - Delegated Flow"** (with inputs for `firstName`, `lastName`, `email`, `groupName`).
-        <img width="975" height="416" alt="Screenshot 2025-08-01 192008" src="https://github.com/user-attachments/assets/7b3cf064-29e3-4cce-b930-0614b870501a" />
+   
+<img width="975" height="416" alt="Screenshot 2025-08-01 192008" src="https://github.com/user-attachments/assets/7b3cf064-29e3-4cce-b930-0614b870501a" />
          
 2. **Add User Creation and Group Logic:**
     
     - Add an **"Okta - Create User"** card to the right.
         
-        - **Configure:** Map `firstName`, `lastName`, `email` from the Delegated Flow. Set `Username` and `Primary email` as `email`.
-          <img width="585" height="740" alt="Screenshot 2025-08-01 192911" src="https://github.com/user-attachments/assets/a3db032f-a75a-4535-9c16-18d1c2dc353e" />
+        - **Configure:** Map `firstName`, `lastName`, `email` from the Delegated Flow. Set `Username` and `Primary email` as `email`.     
+ <img width="585" height="740" alt="Screenshot 2025-08-01 192911" src="https://github.com/user-attachments/assets/a3db032f-a75a-4535-9c16-18d1c2dc353e" />
   
     - Add an **"Okta - Search Groups"** card.
-        <img width="297" height="368" alt="Screenshot 2025-08-01 193000" src="https://github.com/user-attachments/assets/4ffecc37-f87e-4fbc-a178-15cbfa12a8fa" />
+<img width="297" height="368" alt="Screenshot 2025-08-01 193000" src="https://github.com/user-attachments/assets/4ffecc37-f87e-4fbc-a178-15cbfa12a8fa" />
 
-        - **Configure:** Search for the `groupName` from the Delegated Flow.
-          <img width="296" height="790" alt="Screenshot 2025-08-01 194140" src="https://github.com/user-attachments/assets/75f199f3-ca6a-40b3-82ea-6263f6d0455a" />
+    - **Configure:** Search for the `groupName` from the Delegated Flow.
+<img width="296" height="790" alt="Screenshot 2025-08-01 194140" src="https://github.com/user-attachments/assets/75f199f3-ca6a-40b3-82ea-6263f6d0455a" />
   
     - Add an **"If/Else"** card.
         
-        - **Configure Condition:** `IF {{List At.item.id}} is not null`.
+    - **Configure Condition:** `IF {{List At.item.id}} is not null`.
             
 3. **Corrected Actions in "If" and "Else" Branches:**
    
     - **Inside the "If" branch (Group Exists):** Add an **"Okta - Add User to Group"** card.
         
-        - **Configure:** User ID: `ID` from `Create User`. Group ID: `ID` .
-      <img width="495" height="524" alt="Screenshot 2025-08-01 221019" src="https://github.com/user-attachments/assets/0846bbae-6a4c-4651-a011-b4150fe876b4" />
+    - **Configure:** User ID: `ID` from `Create User`. Group ID: `ID` .
+<img width="495" height="524" alt="Screenshot 2025-08-01 221019" src="https://github.com/user-attachments/assets/0846bbae-6a4c-4651-a011-b4150fe876b4" />
 
     - **Inside the "Else" branch (Group Does Not Exist):**
         
@@ -257,9 +259,9 @@ This section details the successful implementation of three key workflow scenari
         - Add an **"Okta - Add User to Group"** card.
             
         - **Configure:** User ID: `ID` from `Create User`. Group ID: `ID` from `Create Group`.
-          <img width="620" height="497" alt="Screenshot 2025-08-01 221039" src="https://github.com/user-attachments/assets/bde2b7a8-3bd5-4b5f-9544-e9245319b03c" />
+<img width="620" height="497" alt="Screenshot 2025-08-01 221039" src="https://github.com/user-attachments/assets/bde2b7a8-3bd5-4b5f-9544-e9245319b03c" />
 
-          <img width="1629" height="898" alt="Screenshot 2025-08-01 215932" src="https://github.com/user-attachments/assets/e5d0b4de-eb8f-4fde-8b66-b8daee92ab4d" />
+<img width="1629" height="898" alt="Screenshot 2025-08-01 215932" src="https://github.com/user-attachments/assets/e5d0b4de-eb8f-4fde-8b66-b8daee92ab4d" />
 
 4. **Save and Activate:**
     
