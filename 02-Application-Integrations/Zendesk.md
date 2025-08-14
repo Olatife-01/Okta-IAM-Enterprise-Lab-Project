@@ -74,8 +74,8 @@ To establish Single Sign-On (SSO) between Okta (as the Identity Provider) and Ze
     * Clicked on the **"Zendesk (Lab)"** application tile.
     * **Result:** Successfully redirected and logged into Zendesk Support as joshua.****.com without re-entering credentials. This confirms successful SAML SSO configuration.
       
-      <img width="715" height="601" alt="Screenshot 2025-07-08 203140" src="https://github.com/user-attachments/assets/9640f43c-7c67-4908-8510-7acf276f5ff1" />
-      <img width="1011" height="297" alt="Screenshot 2025-07-08 203518" src="https://github.com/user-attachments/assets/4e587da2-528b-465a-8435-7b4da769d16d" />
+<img width="715" height="601" alt="Screenshot 2025-07-08 203140" src="https://github.com/user-attachments/assets/9640f43c-7c67-4908-8510-7acf276f5ff1" />
+<img width="1011" height="297" alt="Screenshot 2025-07-08 203518" src="https://github.com/user-attachments/assets/4e587da2-528b-465a-8435-7b4da769d16d" />
 
 ## Challenges & Solutions (Optional - for your real experience)
 * The Zendesk SAML flow looked a bit different from what i did in the past, it is more simplified now, just had to follow the Okta SAML configuration doc.
