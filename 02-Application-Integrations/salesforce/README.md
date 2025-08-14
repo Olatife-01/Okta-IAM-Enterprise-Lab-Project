@@ -1,4 +1,4 @@
-SCIM Provisioning Okta to Salesforce
+# Salesforce — SAML SSO + SCIM Provisioning (Okta → Salesforce)
 
 ## I. Introduction & Purpose
 
