@@ -60,13 +60,13 @@ This section outlines the final, successful steps to build the end-to-end workfl
             
         - `s3:ListBucket`: To list the contents of the S3 bucket.
             <img width="3653" height="808" alt="Screenshot 2025-08-07 104845" src="https://github.com/user-attachments/assets/3e9aa1e4-2a5c-4ddd-a613-6080c4eac34a" />
-           <img width="926" height="794" alt="Screenshot 2025-08-08 171240copy" src="https://github.com/user-attachments/assets/2504a37b-d85f-4206-84c4-753216177fe1" />
+            <img width="3672" height="806" alt="Screenshot 2025-08-07 104918" src="https://github.com/user-attachments/assets/42c87a8e-9319-469e-a812-f7dab6a1887d" />
 
             <img width="2429" height="1301" alt="Screenshot 2025-08-07 105339" src="https://github.com/user-attachments/assets/0111cfec-ed84-49ed-8136-961a1af262dd" />
 
     - A separate IAM user was granted **`lambda:InvokeFunction`** permissions, allowing the Okta Workflows connection to trigger the Lambda.
-        <img width="926" height="794" alt="Screenshot 2025-08-08 171240" src="https://github.com/user-attachments/assets/45ae6154-8020-49c1-9b1f-bd7d168ddd04" />
-
+       <img width="926" height="794" alt="Screenshot 2025-08-08 171240copy" src="https://github.com/user-attachments/assets/2504a37b-d85f-4206-84c4-753216177fe1" />
+       
 2. **AWS Lambda Function Code**:
     
     - A Python 3.9 Lambda function named `create-s3-folder-function` was deployed. The code was carefully written to handle the JSON payload from Okta Workflows and create the folder in S3.
