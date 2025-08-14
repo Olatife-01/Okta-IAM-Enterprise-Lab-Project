@@ -47,9 +47,10 @@ This section prepares your Salesforce instance for Okta to connect and provision
         
     - Choose and register a unique domain name (e.g., `yourlabname`).
   
-        <img width="781" height="767" alt="Screenshot 2025-07-16 225424" src="https://github.com/user-attachments/assets/2be8272f-7bed-43c6-a8e8-9f283939de58" />
-        
 <img width="949" height="906" alt="Screenshot 2025-07-16 225247" src="https://github.com/user-attachments/assets/27584585-7a4f-47a8-a788-281b7b3b1207" />
+        
+<img width="781" height="767" alt="Screenshot 2025-07-16 225424" src="https://github.com/user-attachments/assets/2be8272f-7bed-43c6-a8e8-9f283939de58" />
+        
 
   - Once ready, click **"Deploy to Users"**.
         
@@ -64,6 +65,7 @@ This section prepares your Salesforce instance for Okta to connect and provision
     - Go to **Setup** > **"Setup"**.
         
     - In "Quick Find", type `Profiles` and click **"Profiles"**.
+
         <img width="950" height="771" alt="Screenshot 2025-07-19 121326" src="https://github.com/user-attachments/assets/b72a12d9-736e-4a2d-b13d-14d294624c67" />
 
     - Find **"System Administrator"** and click **"Clone"** next to it.
@@ -259,6 +261,7 @@ This section configures the Salesforce application in Okta and establishes the S
     - Leave "Sync Password" **UNCHECKED**.
         
     - Click **"Save"**.
+
         <img width="625" height="801" alt="Screenshot 2025-07-19 170537" src="https://github.com/user-attachments/assets/23d1ab74-7585-46b4-b625-43c29a910342" />
 
 5. **Map User Attributes ("To App"):**
@@ -270,10 +273,10 @@ This section configures the Salesforce application in Okta and establishes the S
     - Map common attributes (e.g., `firstName` -> `firstName`, `lastName` -> `lastName`, `email` -> `email`, `mobilePhone` -> `phone`, `department` -> `department`, `title` -> `title`, `managerId` -> `managerId`).
         
     - Click **"Save"**.
+
 <img width="933" height="887" alt="Screenshot 2025-07-19 172412" src="https://github.com/user-attachments/assets/fb7b6b51-c3eb-47d9-a948-18350a2e08c9" />
 
-        <img width="895" height="897" alt="image" src="https://github.com/user-attachments/assets/7edc7048-0418-4b12-9e3d-526a13d625bf" />
-
+<img width="895" height="897" alt="image" src="https://github.com/user-attachments/assets/7edc7048-0418-4b12-9e3d-526a13d625bf" />
 
 ### C. Assign Users/Groups for Provisioning in Okta
 
@@ -311,6 +314,7 @@ This demonstrates the full automated user lifecycle management.
         
     - **Verify:** The new user should be created and **Active** in Salesforce, with correctly mapped attributes and the "Standard User" profile.
         <img width="688" height="562" alt="Screenshot 2025-07-19 173908" src="https://github.com/user-attachments/assets/819bc67f-fb67-47de-a61c-c0aaf7984b71" />
+
 <img width="695" height="705" alt="Screenshot 2025-07-19 174104" src="https://github.com/user-attachments/assets/72c49430-304e-4c73-baa7-a672bf090425" />
 
 2. **Mover Scenario (Attribute Update):**
@@ -340,6 +344,7 @@ This demonstrates the full automated user lifecycle management.
         
     - **Verify:** The user should now be **Inactive** (Active checkbox unchecked) in Salesforce, confirming successful deprovisioning.
         <img width="689" height="573" alt="Screenshot 2025-07-19 180602" src="https://github.com/user-attachments/assets/58c1154d-f7f1-4387-ba41-6420b7ce5f68" />
+
     - Even though user is visible under all users, he is not visible under active users:
 *Salesforce doesn't typically "delete" users immediately when deprovisioned via SCIM; instead, it marks them as inactive. This preserves historical data and audit trails.*
  <img width="691" height="460" alt="Screenshot 2025-07-19 180704" src="https://github.com/user-attachments/assets/0532f5b7-960d-43a6-8da6-c1a8466b9570" />
