@@ -33,6 +33,8 @@ I designed, built, and documented a robust enterprise IAM lab using **Okta** as 
 * **Okta** — Universal Directory, Groups/Rules, Policies (MFA, Adaptive, Zones), Device Assurance, End-User Self-Service, App Integrations.
 * \**Okta Identity Governance / Okta Privileged Access*
 
+<img width="822" height="587" alt="image" src="https://github.com/user-attachments/assets/a595ab51-ee94-417a-bf61-465180fe20e1" />
+
 ### Downstream Applications
 
 * **Salesforce** — SAML SSO + SCIM
