@@ -137,6 +137,7 @@ This section details the successful implementation of three key workflow scenari
     <img width="421" height="515" alt="image" src="https://github.com/user-attachments/assets/e3deecdf-07fc-41be-b9d5-eef5a30f03d4" />
 
 **Flow Architecture**
+
 <img width="592" height="147" alt="Screenshot 2025-07-31 213116" src="https://github.com/user-attachments/assets/d2afe6fd-1b54-4fc5-9b24-f14207b4dec0" />
 
 ### B. Workflow 2: Conditional Group Assignment (Mover)
