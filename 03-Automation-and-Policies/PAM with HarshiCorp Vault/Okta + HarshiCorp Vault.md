@@ -152,12 +152,13 @@ Authentication and policy enforcement were successfully tested, including verifi
 
     * **Postman Configuration:**
         * A GET request was created in Postman.
-          <img width="914" height="496" alt="image" src="https://github.com/user-attachments/assets/b3936699-f011-4582-ae25-2f2995ee4a24" />
+<img width="914" height="496" alt="image" src="https://github.com/user-attachments/assets/b3936699-f011-4582-ae25-2f2995ee4a24" />
 
         * The request header `X-Vault-Token` was set, with the obtained user token as its value.
         * The GET request was sent to the URL `https://***lookup`.
     * **Result:** The GET request returned a `200 OK` status with a JSON body. The body explicitly showed that the token had the policies `kv-read-policy` and `default`, and indicated the username `jos*****.com` and its mapping path `auth/okta/login/****.com`. This confirmed the successful authentication and correct policy assignment.
-    <img width="912" height="876" alt="Screenshot 2025-07-12 165640copy" src="https://github.com/user-attachments/assets/8050740d-b8e0-4a34-bcda-d47103041285" />
+      
+<img width="912" height="876" alt="Screenshot 2025-07-12 165640copy" src="https://github.com/user-attachments/assets/8050740d-b8e0-4a34-bcda-d47103041285" />
 
 
 ## VI. Troubleshooting Common Issues
