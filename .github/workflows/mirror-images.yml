@@ -1,3 +1,7 @@
+permissions:
+  contents: write
+  pull-requests: write
+
 name: Mirror images to /assets/images
 on:
   workflow_dispatch: {}  # run manually from Actions tab
