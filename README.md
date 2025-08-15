@@ -73,17 +73,51 @@ I designed, built, and documented a robust enterprise IAM lab using **Okta** as 
 
 ## Repository Structure
 
-* **01-Okta-Foundations** — UD, groups, policies, MFA, device assurance, self-service, branding
-* **02-Application-Integrations** — Salesforce, Google Workspace (SSO), Zendesk, Slack, AWS IAM Identity Center
-* **03-Automation-and-Policies** — Okta Workflows, Terraform (S3 + DynamoDB; Git CI/CD), policy tiering
-* **04-Observability-and-Compliance** — Splunk Cloud (design + to-capture), evidence and reporting
+- **01 – Okta Setup**
+  - [Introduction](./01-%20Okta%20Setup/Introduction.md)
+
+- **02 – HR & Directory Integrations**
+  - [Active Directory Integration](./02-%20HR%20%26%20Directory%20Integrations/Active%20Directory%20Integration.md)
+  - [BambooHR](./02-%20HR%20%26%20Directory%20Integrations/BanbooHR.md)
+
+- **03 – Downstream App Integrations**
+  - [AWS IAM Identity Center: SAML-SSO + SCIM](./03-%20Downstream%20App%20Integrations/AWS%20IAM-Identity%20Center:%20SAML-SSO%2BSCIM.md)
+  - [Google Workspace](./03-%20Downstream%20App%20Integrations/Google%20Workspace.md)
+  - [Salesforce](./03-%20Downstream%20App%20Integrations/Salesforce.md)
+  - [Zendesk (SAML SSO)](./03-%20Downstream%20App%20Integrations/Zendesk.md)
+
+- **04 – Automation & Policies**
+  - **IaC & Pipeline / Terraform**
+    - [AWS + Terraform — IaC](./04-%20Automation%20%26%20Policies/IaC%20%26%20Pipeline/Terraform/AWS%20%2B%20Terraform%20-%20IaC.md)
+    - [Okta + Terraform](./04-%20Automation%20%26%20Policies/IaC%20%26%20Pipeline/Terraform/Okta%20%2B%20Terraform.md)
+    - [GitHub CI-CD Pipeline](./04-%20Automation%20%26%20Policies/IaC%20%26%20Pipeline/Terraform/GitHub%20CI-CD%20Pipeline.md)
+  - **PAM with HashiCorp Vault**
+    - [HashiCorp + AWS — PAM & Dynamic credentials](./04-%20Automation%20%26%20Policies/PAM%20with%20Harshicorp%20Vault/HarshiCorp%20%2B%20AWS%20-%20PAM%20%26%20Dynamic%20credentials....md)
+    - [Okta + HashiCorp Vault](./04-%20Automation%20%26%20Policies/PAM%20with%20Harshicorp%20Vault/Okta%20%2B%20HarshiCorp%20Vault.md)
+  - **Policies**
+    - [Okta Verify (MFA)](./04-%20Automation%20%26%20Policies/Policies/MFA/Okta%20Verify.md)
+    - [Contextual Access Policies](./04-%20Automation%20%26%20Policies/Policies/Contextual%20Access%20Policies.md)
+    - [Device Assurance, CAP, Endpoint Security](./04-%20Automation%20%26%20Policies/Policies/Device%20Assurance,%20CAP,%20Endpoint%20Security.md)
+  - **Workflows**
+    - [Automated Identity Lifecycle & Conditional Logic](./04-%20Automation%20%26%20Policies/Workflows/Automated%20Identity%20Lifecycle%20%26%20Conditional%20Logic....md)
+    - [Okta Workflows & Automated AWS S3-Folder Creation](./04-%20Automation%20%26%20Policies/Workflows/Okta%20Workflows%20%26%20Automated%20AWS%20S3-Folder%20Cre....md)
+
+- **05 – Observability & Compliance**
+  - [Okta Audit with Splunk Cloud](./05-%20Observability%20%26%20Compliance/Splunk%20Cloud/Okta%20Audit%20with%20Splunk%20Cloud.md)
+  - [Okta Logging](./05-%20Observability%20%26%20Compliance/Splunk%20Cloud/Okta%20Logging.md)
+  - [Audit & Compliance (Consolidated)](./05-%20Observability%20%26%20Compliance/Audit%20%26%20Compliance.md)
+
+- **06 – Future Enhancements**
+  - [Roadmap](./06-%20Future%20Enhancements/README.md)
+
 
 ### Reading order (recommended)
 
-1. 01 Foundations
-2. 02 App Integrations
-3. 03 Automation & Policies
-4. 04 Observability & Compliance
+1. 01 Okta Setup 
+2. 02 Directory Integrations
+3. 03 App Integrations
+4. 04 Automation & Policies
+5. 05 Observability & Compliance
 
 ## Phases of Development
 
