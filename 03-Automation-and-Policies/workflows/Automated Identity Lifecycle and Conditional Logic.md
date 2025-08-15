@@ -280,7 +280,7 @@ This section details the successful implementation of three key workflow scenari
 
 ## V. Advanced Low-Code Flow Analysis
 
-The advanced flow demonstrates a powerful "check and create" pattern, which is crucial for building resilient automations. By creating this flow, we showcase an understanding of:
+The advanced flow demonstrates a powerful "check and create" pattern, which is crucial for building resilient automations. By creating this flow, I showcase an understanding of:
 
 - **Resilient Logic:** The `If/Else` block prevents flow failure if the group already exists.
     
