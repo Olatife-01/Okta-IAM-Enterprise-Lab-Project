@@ -7,7 +7,7 @@
 
 This lab demonstrates the implementation of a practical, live workflow to showcase cross-cloud automation. The primary objective was to build a flow that automatically provisions a personal folder in an AWS S3 bucket based on a user's attributes in Okta.
 
-By creating this flow, we successfully demonstrated:
+By creating this flow, I successfully demonstrated:
 
 - **Automated Resource Provisioning**: A new user in Okta with a specific attribute automatically triggers the creation of a dedicated folder in AWS S3.
     
