@@ -1,4 +1,4 @@
-# Demonstrating Compliance Logging with Okta & Splunk
+# Demonstrating Audit Logging with Okta & Splunk
 
 ## I. ISO 27001: The Framework and Our Objective
 
