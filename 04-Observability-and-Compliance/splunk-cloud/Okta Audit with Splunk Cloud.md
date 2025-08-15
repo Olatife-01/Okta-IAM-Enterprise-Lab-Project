@@ -109,5 +109,3 @@ To complete the reporting process, I set up a scheduled export for the dashboard
 <img width="786" height="752" alt="Screenshot 2025-08-13 135126" src="https://github.com/user-attachments/assets/f5edb4f0-cf36-4b2d-a5a4-f0d0df5aeafb" />
 <img width="685" height="659" alt="Screenshot 2025-08-13 135324" src="https://github.com/user-attachments/assets/86265905-5d8c-4cde-a096-091a94f815ed" />
 
-
-This final note summarizes a successful implementation of a real-world compliance solution, demonstrating how a foundational IAM lab can be leveraged to meet and exceed security and regulatory requirements.
