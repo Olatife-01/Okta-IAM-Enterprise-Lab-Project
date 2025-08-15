@@ -76,6 +76,7 @@ terraform-iam-lab/
   - Create Repository in gitHub
 <img width="792" height="813" alt="Screenshot 2025-08-02 232223" src="https://github.com/user-attachments/assets/40d838c4-8d34-4792-877b-2dbad10e894d" />
 <img width="621" height="498" alt="image" src="https://github.com/user-attachments/assets/7154ec5c-0aec-46e6-98ed-5e36018321e1" />
+
   - Securely store Api credentials as GitHub secrets **Repo settings > Security > secretes and Variables >Actions > New Repo secrets **
 <img width="888" height="957" alt="Screenshot 2025-08-03 011449" src="https://github.com/user-attachments/assets/9bf03106-4657-4f1d-8700-86ca6f793e52" />
 <img width="605" height="826" alt="Screenshot 2025-08-03 012824" src="https://github.com/user-attachments/assets/65ad1e22-cb89-4eaa-840a-becffb16db5d" />
