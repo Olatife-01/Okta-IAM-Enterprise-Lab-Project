@@ -284,4 +284,4 @@ aws s3 mb s3://should-fail-123    # AccessDenied (expected)
 
 ---
 
-**Bottom line:** My lab demonstrates **defensible, auditable** identity and access controls with **end-to-end evidence**: policy → provisioning → least-privilege → monitoring → change control. Where constraints exist (e.g., Google Workspace provisioning), they’re explicitly documented with **compensating controls** and a path to remediation.
+**Conclusion:** My lab demonstrates **defensible, auditable** identity and access controls with **end-to-end evidence**: policy → provisioning → least-privilege → monitoring → change control. Where constraints exist (e.g., Google Workspace provisioning), they’re explicitly documented with **compensating controls** and a path to remediation.
