@@ -1,7 +1,3 @@
-Here’s your text, cleaned up and formatted as Markdown for your **root `README.md`**:
-
----
-
 # Okta-IAM-Enterprise-Lab-Project
 
 ## Project Overview
