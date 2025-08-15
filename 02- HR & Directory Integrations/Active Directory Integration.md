@@ -94,7 +94,7 @@ The Active Directory integration was successfully completed, resulting in a robu
 ## Reference
 
 * **Video Walkthrough of  AD Configuration:**
-   **Timestamp:** **07:28 - 19:53 **
+   ** Timestamp: 07:28 - 19:53 **
  [https://drive.google.com/file/d/1ZngYs2iGPxkZZ959XKFX9JhYJ1LhN9d/view?usp=drive_link](https://drive.google.com/file/d/1ZngYs2iGPxkZZ959XKFX9JhYJ1LhN9d/view?usp=drive_link)
     * *Note:* This video provides a visual walkthrough of  Active Directory integration process, serving as a valuable reference for the  procedural steps involved in this stage.
 
