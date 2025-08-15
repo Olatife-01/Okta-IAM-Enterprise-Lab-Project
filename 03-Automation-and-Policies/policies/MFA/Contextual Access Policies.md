@@ -6,7 +6,7 @@ This stage focuses on implementing advanced security and access control mechanis
 
 ## Technical Thought Process & Evolution of Configuration
 
-Enterprises need authentication that’s **risk-responsive**: the same password + MFA flow shouldn’t apply identically from a managed laptop on a corporate network and from a new IP in a high-risk geography. Okta’s **Network Zones** give us the primitive to classify access from trusted IPs/VPNs versus anywhere else; **Global Session Policy** governs session lifetime and re-auth patterns across the tenant; and **Authentication Policies** push phishing-resistant factors like **Okta Verify FastPass** at the app edge where it matters most. We began by codifying a **Trusted\_Network\_Zone** for predictable traffic and a **Risky\_Geolocation\_Zone** to capture unusual locations. Session policy came next: we shortened idle/absolute lifetimes and required periodic re-auth, with a stricter path when risk signals (new IP/high risk) are present. Finally, at the application layer, we layered a strong app auth policy: FastPass as the primary (possession, phishing-resistant, user-interaction) for trusted cases, and **two factors** for the catch-all untrusted path—every sign-in, no exceptions. Ordering rules from most specific to broad ensured deterministic evaluation. We validated both **positive** (trusted network) and **negative** (untrusted/new IP) paths and confirmed rule hits in **System Log** events (`policy.evaluate`). This staged approach mirrors production: define zones → tune sessions → harden app auth → iterate with telemetry.
+Enterprises need authentication that’s **risk-responsive**: the same password + MFA flow shouldn’t apply identically from a managed laptop on a corporate network and from a new IP in a high-risk geography. Okta’s **Network Zones** give us the primitive to classify access from trusted IPs/VPNs versus anywhere else; **Global Session Policy** governs session lifetime and re-auth patterns across the tenant; and **Authentication Policies** push phishing-resistant factors like **Okta Verify FastPass** at the app edge where it matters most. I began by codifying a **Trusted\_Network\_Zone** for predictable traffic and a **Risky\_Geolocation\_Zone** to capture unusual locations. Session policy came next: I shortened idle/absolute lifetimes and required periodic re-auth, with a stricter path when risk signals (new IP/high risk) are present. Finally, at the application layer, I layered a strong app auth policy: FastPass as the primary (possession, phishing-resistant, user-interaction) for trusted cases, and **two factors** for the catch-all untrusted path—every sign-in, no exceptions. Ordering rules from most specific to broad ensured deterministic evaluation. I validated both **positive** (trusted network) and **negative** (untrusted/new IP) paths and confirmed rule hits in **System Log** events (`policy.evaluate`). This staged approach mirrors production: define zones → tune sessions → harden app auth → iterate with telemetry.
 
 
 ## Key Configurations and Concepts
@@ -17,14 +17,14 @@ Network Zones are fundamental building blocks for contextual access policies, al
 
 * **Trusted_Network_Zone:**
     * **Type:** IP Zone
-    * **Purpose:** Represents trusted network locations (e.g., corporate office egress IPs, specific VPN ranges, or your current public IP for testing). Access from this zone is generally considered less risky.
-    * **Configuration:** Configured with specific public IP addresses (e.g., your current IP) or IP ranges.
+    * **Purpose:** Represents trusted network locations (e.g., corporate office egress IPs, specific VPN ranges, or My current public IP for testing). Access from this zone is generally considered less risky.
+    * **Configuration:** Configured with specific public IP addresses (e.g., my current IP) or IP ranges.
 <img width="631" height="569" alt="Screenshot 2025-07-10 203049" src="https://github.com/user-attachments/assets/b14be7d8-17a5-45d4-a0d9-89a127d91bb2" />
 
 * **Risky_Geolocation_Zone:**
     * **Type:** Dynamic Zone
-    * **Purpose:** Identifies and classifies access attempts originating from countries or regions deemed high-risk or unusual for your organization.
-    * **Configuration:** Configured to include or exclude specific countries (e.g., countries far from your usual operational areas).
+    * **Purpose:** Identifies and classifies access attempts originating from countries or regions deemed high-risk or unusual for the organization.
+    * **Configuration:** Configured to include or exclude specific countries (e.g., countries far from my usual operational areas).
 <img width="959" height="194" alt="Screenshot 2025-07-10 203510" src="https://github.com/user-attachments/assets/5c94fa3c-0f28-4a34-b83f-ed9efab2d4c5" />
 
 ### 2. Global Session Policy (`Enterprise_Session_Policy`) Setup
