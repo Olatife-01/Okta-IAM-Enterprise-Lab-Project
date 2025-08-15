@@ -140,7 +140,7 @@ on main.tf line 11: org_url is not expected here.
 
 ```
 provider "okta" {
-  org_name  = "trial-5828141" # Corrected: Use org_name
+  org_name  = "*****" # Corrected: Use org_name
   base_url  = "okta.com"     # Corrected: Use base_url for the domain
   api_token = var.okta_api_token
 }
