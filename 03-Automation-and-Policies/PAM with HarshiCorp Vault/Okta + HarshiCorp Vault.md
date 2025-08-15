@@ -4,7 +4,7 @@
 
 ## I. Introduction & Purpose
 
-This document details the integration of **HashiCorp Vault** with **Okta** to establish a robust Privileged Access Management (PAM) solution within our Enterprise IAM Lab. This specific integration ultimately leveraged Vault's **Okta Auth Method**, which directly uses Okta's Authentication API. The primary goal is to centralize privileged identity authentication and secrets management, using Okta as the authoritative Identity Provider (IdP) for all administrative and automated access to critical infrastructure and sensitive data.
+This document details the integration of **HashiCorp Vault** with **Okta** to establish a robust Privileged Access Management (PAM) solution within my Enterprise IAM Lab. This specific integration ultimately leveraged Vault's **Okta Auth Method**, which directly uses Okta's Authentication API. The primary goal is to centralize privileged identity authentication and secrets management, using Okta as the authoritative Identity Provider (IdP) for all administrative and automated access to critical infrastructure and sensitive data.
 
 By integrating Vault with Okta via the direct Okta Auth Method, I achieve:
 * **Centralized Authentication:** Users authenticate once with their Okta username and password directly through Vault.
@@ -14,16 +14,14 @@ By integrating Vault with Okta via the direct Okta Auth Method, I achieve:
 
 ## II. Technical Thought Process & Evolution of Configuration
 
-Our initial intent was to integrate HashiCorp Vault with Okta using **OpenID Connect (OIDC)**, a modern and flexible standard for identity federation. We attempted to enable the OIDC auth method via the Vault CLI.
+My intent was to integrate HashiCorp Vault with Okta using **OpenID Connect (OIDC)**, a modern and flexible standard for identity federation. We attempted to enable the OIDC auth method via the Vault CLI.
 
 However, during the validation phase, a significant unexpected issue emerged:
 * **Problem Faced:** Although `Okta-oidc/` was successfully enabled and visible when verified via `vault auth list` in the CLI, the **"Okta-oidc" option was conspicuously absent from the Vault UI's login page dropdown**. This prevented UI-based authentication via OIDC.
-* **Initial Troubleshooting Attempt:** We pursued common browser-related workarounds, including hard refreshing the browser (`Ctrl + F5`) and clearing browser cache and cookies for the Vault domain. Despite these efforts, the OIDC option did not appear in the UI.
 
-Given the persistence of the UI display issue with OIDC and the immediate goal of establishing a functional PAM integration, a strategic pivot was made.
-* **Workaround/Decision:** We opted to configure Vault's native **"Okta" authentication method** (often referred to as the "Okta blade" or direct API integration), which was readily available as an option in the Vault UI under "Infra". This method directly communicates with Okta's Authentication API, bypassing the OIDC flow entirely.
+* **Workaround/Decision:** I opted to configure Vault's native **"Okta" authentication method** (often referred to as the "Okta blade" or direct API integration), which was readily available as an option in the Vault UI under "Infra". This method directly communicates with Okta's Authentication API, bypassing the OIDC flow entirely.
 
-This adaptive approach allowed us to move forward quickly and successfully establish the authentication bridge between Okta and Vault, serving as a practical demonstration of adaptability in a lab environment.
+This adaptive approach allowed me to move forward quickly and successfully establish the authentication bridge between Okta and Vault, serving as a practical demonstration of adaptability in a lab environment.
 
 The authentication flow using this chosen "Okta Auth Method" is as follows:
 1.  A user attempts to authenticate to Vault (via UI or CLI) using their Okta username and password.
@@ -36,11 +34,11 @@ The authentication flow using this chosen "Okta Auth Method" is as follows:
 
 Before proceeding, ensure you have the following in place:
 
-* **Okta Developer Account:** Your Okta organization is active and you have administrator access.
+* **Okta Developer Account:** Ensure Okta organization is active and you have administrator access.
 * **Test User(s) and Group(s) in Okta:** A test user, specifically `joshua.dominguez126@mellonryon.com`, who is a member of an Okta group named `lab User`.
 * **Okta API Token:** This token grants Vault the necessary permissions to query Okta's user and group information.
     * **How to create an Okta API Token:**
-        1.  Log in to your Okta Admin Console.
+        1.  Log in to the Okta Admin Console.
         2.  In the left-hand navigation, go to **"Security"** > **"API"**.
         3.  Click on the **"Tokens"** tab.
         4.  Click **"Create Token"**.
@@ -48,9 +46,9 @@ Before proceeding, ensure you have the following in place:
         6.  Click **"Create Token"**.
         7.  **IMPORTANT:** Copy the `Token` value immediately. It will only be shown once. **Save this securely**, as we will need it for the Vault configuration. Treat it like a sensitive password.
 * **HashiCorp Vault Cluster:** A running Vault cluster was created. Ensure it is initialized and unsealed.
-* **Vault CLI:** The `vault` command-line interface installed and configured to point to your Vault instance.
+* **Vault CLI:** The `vault` command-line interface installed and configured to point to the Vault instance.
 * **Postman:** Installed and configured for API testing.
-* **Network Connectivity:** Ensure your Vault instance can communicate with Okta's API endpoints (outbound HTTPS/443 to your Okta Org URL).
+* **Network Connectivity:** Ensure the Vault instance can communicate with Okta's API endpoints (outbound HTTPS/443 to Okta Org URL).
 
 ## IV. Configuration Steps
 
@@ -60,8 +58,8 @@ I configured Vault to use the Okta Auth Method, linking it to my Okta organizati
 
 The Okta authentication method was enabled and configured directly through the Vault UI.
 
-1.  **Access your Vault Instance (UI):**
-    * Log in to your Vault UI (e.g., `https://.z1.hashicorp.cloud:*`).
+1.  **Access the Vault Instance (UI):**
+    * Log in to Vault UI (e.g., `https://.z1.hashicorp.cloud:*`).
     * Log in with a root token or an administrator token.
 <img width="811" height="896" alt="Screenshot 2025-07-12 120625" src="https://github.com/user-attachments/assets/cd2b20dd-dde2-40e3-91b7-d42c43c88ecb" />
 
@@ -76,7 +74,7 @@ The Okta authentication method was enabled and configured directly through the V
 <img width="1010" height="691" alt="Screenshot 2025-07-12 122502" src="https://github.com/user-attachments/assets/58141de8-b2ca-43a3-b8fb-9392a6d2b098" />
 
 4.  **Configure the Okta Auth Method Details:**
-    * **Organization Name:** Set to your Okta domain.
+    * **Organization Name:** Set to Okta domain.
 <img width="812" height="152" alt="image" src="https://github.com/user-attachments/assets/d740b95d-f437-4078-bb60-7501bd612f9b" />
 
     * **API Token:** Paste the **Okta API Token Value** you generated and securely saved in Section III.
@@ -87,7 +85,7 @@ The Okta authentication method was enabled and configured directly through the V
 
 5.  **Save the Configuration:**
     * Click the **"Save"** button to apply the configuration.
-    * *Confirmation:* The "Okta" method now appears in your list of enabled auth methods, indicating successful configuration.
+    * *Confirmation:* The "Okta" method now appears in the list of enabled auth methods, indicating successful configuration.
 
 ### B. Vault Secret Engine Configuration
 
@@ -105,8 +103,8 @@ A Key-Value (KV) secrets engine was enabled and a secret was created.
 
 A specific Vault policy was created to define access to secrets.
 
-1.  **Access your Vault Instance (CMD/PowerShell):**
-    * Open your Command Prompt or PowerShell or via UI.
+1.  **Access the Vault Instance (CMD/PowerShell):**
+    * Open Command Prompt or PowerShell or via UI.
     * Ensure you are logged in to Vault with a token that has root  capabilities.
 <img width="1608" height="759" alt="image" src="https://github.com/user-attachments/assets/cabb4a91-152a-4dd7-a355-6554685c0e9d" />
 
